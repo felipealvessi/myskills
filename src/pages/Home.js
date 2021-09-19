@@ -68,5 +68,13 @@ const styles = StyleSheet.create({
     color: '#FFF',
     fontSize: 17,
     fontWeight: 'bold'
+  },
+  skill: {
+    color: '#FFF',
+    backgroundColor: '#1F1E25',
+    padding: 15,
+    fontSize: 22,
+    fontWeight: 'bold',
+    borderRadius: 15
   }
 });

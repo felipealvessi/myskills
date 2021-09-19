@@ -1,8 +1,12 @@
 /* eslint-disable react-native/no-inline-styles */
-import React from 'react';
+import React, { useState }from 'react';
 import {View, Text, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
 
 export default function App() {
+
+  const [newSkill, setNewSkill] = useState('');
+  const [mySkill, setmySkill] = useState([]);
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Welcome, Felipe!</Text>
@@ -23,6 +27,10 @@ export default function App() {
       <Text style={[styles.title, { marginTop: 50}]}>
         My Skills
       </Text>
+
+      <Text style={styles.skill}>
+      teste
+      </ Text>
 
     </View>
   )

@@ -21,16 +21,23 @@ export default function App() {
        style={styles.button}
        activeOpacity={.7}
        >
-        <Text style={styles.buttonText}>Add</Text>
+        <Text 
+        style={styles.buttonText}>
+          Add</Text>
       </TouchableOpacity>
 
-      <Text style={[styles.title, { marginTop: 50}]}>
+      <Text 
+      style={[styles.title, { marginVertical: 50}]}>
         My Skills
       </Text>
 
-      <Text style={styles.skill}>
+      <TouchableOpacity 
+      style={styles.buttonSkill}>
+      <Text 
+      style={styles.textskill}>
       teste
       </ Text>
+      </TouchableOpacity>
 
     </View>
   )
@@ -69,12 +76,15 @@ const styles = StyleSheet.create({
     fontSize: 17,
     fontWeight: 'bold'
   },
-  skill: {
-    color: '#FFF',
+  buttonSkill: {
     backgroundColor: '#1F1E25',
     padding: 15,
+    borderRadius: 50,
+    alignItems: 'center',
+  },
+  textskill: {
+    color: '#FFF',
     fontSize: 22,
     fontWeight: 'bold',
-    borderRadius: 15
   }
 });

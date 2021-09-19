@@ -2,7 +2,7 @@
 import React, { useState }from 'react';
 import {View, Text, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
 
-export default function App() {
+export default function Home() {
 
   const [newSkill, setNewSkill] = useState('');
   const [mySkills, setMySkills] = useState([]);
@@ -19,6 +19,7 @@ export default function App() {
       style={styles.input} 
       placeholder='New Skill'
       placeholderTextColor='#555'
+      onChangeText={setNewSkill}
       />
 
       <TouchableOpacity
@@ -38,7 +39,7 @@ export default function App() {
 
       {
         mySkills.map(skill => (
-          <TouchableOpacity style={styles.buttonSkill}>
+          <TouchableOpacity key={skill} style={styles.buttonSkill}>
             <Text style={styles.textskill}>
                {skill}
             </ Text>
@@ -88,6 +89,7 @@ const styles = StyleSheet.create({
     padding: 15,
     borderRadius: 50,
     alignItems: 'center',
+    marginVertical: 10,
   },
   textskill: {
     color: '#FFF',

@@ -1,7 +1,9 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, { useState }from 'react';
 import {View, Text, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
+
 import { Button } from './../components/Button';
+import { SkillCard } from './../components/SkillCard';
 
 export default function Home() {
 
@@ -33,11 +35,7 @@ export default function Home() {
 
       {
         mySkills.map(skill => (
-          <TouchableOpacity key={skill} style={styles.buttonSkill}>
-            <Text style={styles.textskill}>
-               {skill}
-            </ Text>
-          </TouchableOpacity>
+          <SkillCard/>
         ))
       }
 
@@ -65,17 +63,5 @@ const styles = StyleSheet.create({
     padding: 15,
     marginTop: 30,
     borderRadius: 7
-  }, 
-  buttonSkill: {
-    backgroundColor: '#1F1E25',
-    padding: 15,
-    borderRadius: 50,
-    alignItems: 'center',
-    marginVertical: 10,
-  },
-  textskill: {
-    color: '#FFF',
-    fontSize: 22,
-    fontWeight: 'bold',
   }
 });

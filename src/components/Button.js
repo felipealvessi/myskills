@@ -6,7 +6,7 @@ export function Button(){
       <TouchableOpacity
       style={styles.button}
       activeOpacity={.7}
-      onPress={handleAddNewSkill}
+      // onPress={handleAddNewSkill}
       >
       <Text 
       style={styles.buttonText}>

@@ -5,7 +5,11 @@ import {View, Text, StyleSheet, TextInput, TouchableOpacity} from 'react-native'
 export default function App() {
 
   const [newSkill, setNewSkill] = useState('');
-  const [mySkill, setmySkill] = useState([]);
+  const [mySkills, setMySkills] = useState([]);
+
+  function handleAddNewSkill(){
+    setMySkills(oldState => [...oldState, newSkill]);
+  }
 
   return (
     <View style={styles.container}>
@@ -20,6 +24,7 @@ export default function App() {
       <TouchableOpacity
        style={styles.button}
        activeOpacity={.7}
+       onPress={handleAddNewSkill}
        >
         <Text 
         style={styles.buttonText}>
@@ -31,13 +36,15 @@ export default function App() {
         My Skills
       </Text>
 
-      <TouchableOpacity 
-      style={styles.buttonSkill}>
-      <Text 
-      style={styles.textskill}>
-      teste
-      </ Text>
-      </TouchableOpacity>
+      {
+        mySkills.map(skill => (
+          <TouchableOpacity style={styles.buttonSkill}>
+            <Text style={styles.textskill}>
+               {skill}
+            </ Text>
+          </TouchableOpacity>
+        ))
+      }
 
     </View>
   )

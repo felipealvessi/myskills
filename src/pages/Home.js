@@ -25,7 +25,7 @@ export default function Home() {
       onChangeText={setNewSkill}
       />
 
-      <Button/>
+      <Button onPress={handleAddNewSkill}/>
 
 
       <Text 
@@ -35,7 +35,7 @@ export default function Home() {
 
       {
         mySkills.map(skill => (
-          <SkillCard/>
+          <SkillCard skill={skill}/>
         ))
       }
 
